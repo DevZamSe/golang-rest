@@ -1,5 +1,8 @@
 module microservices
 
 go 1.15
-github.com/go-sql-driver/mysql
-github.com/gorilla/mux
+
+require (
+	github.com/go-sql-driver/mysql v1.5.0 // indirect
+	github.com/gorilla/mux v1.8.0 // indirect
+)
