@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 
 	"microservices/src/middleware"
 
@@ -21,6 +22,11 @@ func main() {
 	r.HandleFunc("/api/products/{id}", middleware.UpdateProduct).Methods("PUT")
 	r.HandleFunc("/api/products/{id}", middleware.DeleteProduct).Methods("DELETE")
 
-	log.Fatal(http.ListenAndServe(":8000", r))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8000"
+	}
+
+	log.Fatal(http.ListenAndServe(":"+port, r))
 
 }
