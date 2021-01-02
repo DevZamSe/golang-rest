@@ -3,8 +3,10 @@
     "GoVersion":"go1.5",
     "GodepVersion": "v74",
     "Packages": [
-        "./...",
-        "github.com/go-sql-driver/mysql"
+        "./..."
     ],
-    "Deps":[]
+    "Deps":[
+        "github.com/go-sql-driver/mysql",
+        "github.com/gorilla/mux"
+    ]
 }
