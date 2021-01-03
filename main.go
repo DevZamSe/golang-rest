@@ -1,7 +1,7 @@
 package main
 
 import (
-	"log"
+	"fmt"
 	"net/http"
 	"os"
 
@@ -24,9 +24,13 @@ func main() {
 
 	port := os.Getenv("PORT")
 	if port == "" {
+		fmt.Println("default")
 		port = "8000"
 	}
 
-	log.Fatal(http.ListenAndServe(":"+port, r))
+	fmt.Println("todo listo!!")
+	fmt.Println(port)
+	// log.Fatal(http.ListenAndServe(":"+port, r))
+	http.ListenAndServe(":"+port, r)
 
 }
